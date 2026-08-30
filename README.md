@@ -14,7 +14,7 @@ Abra o `index.html`, procure pelo bloco `CONFIG` no final do arquivo:
 
 ```js
 var CONFIG = {
-  whatsapp: "556699309063", // (66) 99309-063 — só dígitos, com DDI 55
+  whatsapp: "556699309063", // (66) 9930-9063 — só dígitos, com DDI 55
   instagram: "https://www.instagram.com/verdeesal",
   instagramDm: "https://ig.me/m/verdeesal"
 };
