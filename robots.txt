@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://verdeesal.github.io/verdeesal/sitemap.xml
