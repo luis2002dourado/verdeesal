@@ -6,7 +6,7 @@
 <title>Verde &amp; Sal — Roupas, Semijoias, Pratas e Acessórios | Presidente Dutra – MA</title>
 <meta name="description" content="Loja de moda feminina em Presidente Dutra (MA). Roupas, semijoias, pratas e acessórios escolhidos para mulheres autênticas e estilosas. Enviamos para todo o Brasil.">
 <link rel="canonical" href="https://luis2002dourado.github.io/verdeesal/">
-<meta name="theme-color" content="#23402E">
+<meta name="theme-color" content="#4e6e52">
 
 <!-- Open Graph / redes sociais -->
 <meta property="og:type" content="website">
@@ -49,12 +49,12 @@
 :root{
   --ink:#2b3123;        /* verde-oliva profundo (texto) */
   --verde:#4e6e52;      /* sálvia profundo (header, botões) */
-  --verde-2:#5f7f63;
+  --verde-2:#44614a;
   --sage:#85a387;       /* verde-sálvia do logo */
   --sage-bg:#edf2e6;
   --sal:#f7f3e6;        /* creme "sal" (fundo) */
   --areia:#e8e1cc;      /* areia (apoio) */
-  --gold:#c9992e;       /* dourado profundo (destaques) */
+  --gold:#9a7a1e;       /* dourado profundo (destaques, contraste AA) */
   --gold-soft:#fdd254;  /* dourado do logo (botões/chips) */
   --line:rgba(43,49,35,.14);
   --white:#fffdf8;
@@ -127,6 +127,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .btn-gold:hover{background:#ffdd7a;transform:translateY(-2px)}
 
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--verde);color:#fff;padding:.6rem 1rem;border-radius:0 0 8px 0;z-index:99}
+.skip:focus{left:1rem;top:1rem}
 
 /* ============ HEADER ============ */
 header{
@@ -212,7 +214,7 @@ nav.desktop a:hover{opacity:1}
   animation:float 6s ease-in-out infinite;
 }
 .float-card b{display:block;font-size:.88rem}
-.float-card small{color:rgba(32,38,31,.6)}
+.float-card small{color:rgba(32,38,31,.72)}
 .float-card .pulse{width:9px;height:9px;border-radius:50%;background:#3fae6a;flex:none;position:relative}
 .float-card .pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid #3fae6a;opacity:.6;animation:ping 1.8s var(--easeOut) infinite}
 .fc-status{top:30%;right:-10%}
@@ -272,7 +274,7 @@ section{padding:5rem 0}
   box-shadow:var(--shadow-sm);
 }
 .step .num{
-  font-family:var(--font-display);font-size:2rem;color:var(--sage);
+  font-family:var(--font-display);font-size:2rem;color:var(--verde);
   border-bottom:2px solid var(--areia);padding-bottom:.8rem;margin-bottom:1rem;
   display:flex;justify-content:space-between;align-items:center;
 }
@@ -326,7 +328,7 @@ section{padding:5rem 0}
 }
 .map-frame iframe{display:block;width:100%;height:230px;border:0}
 .contact .btn-light{margin-top:1.2rem}
-.contact .cta-note{font-size:.8rem;opacity:.7;margin-top:.8rem}
+.contact .cta-note{font-size:.8rem;opacity:1;margin-top:.8rem}
 
 /* footer */
 footer{background:#182017;color:rgba(238,242,233,.75);padding:3rem 0 1.6rem}
@@ -356,6 +358,8 @@ footer{background:#182017;color:rgba(238,242,233,.75);padding:3rem 0 1.6rem}
 
 /* ============ RESPONSIVO ============ */
 @media (max-width:920px){
+  .brand .logo{height:28px}
+  nav.desktop{gap:1rem}
   .hero-grid{grid-template-columns:1fr;gap:2.6rem}
   .hero{padding-top:8rem}
   .hero-media{max-width:460px}
@@ -367,6 +371,10 @@ footer{background:#182017;color:rgba(238,242,233,.75);padding:3rem 0 1.6rem}
   .contact-grid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
+@media (max-width:860px){
+  .header-cta .btn{display:none}
+  .burger{display:flex}
+}
 @media (max-width:640px){
   nav.desktop, .header-cta .btn{display:none}
   .burger{display:flex}
@@ -377,10 +385,11 @@ footer{background:#182017;color:rgba(238,242,233,.75);padding:3rem 0 1.6rem}
   body{padding-bottom:76px} /* espaço pro CTA fixo */
 }
 </style>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 
-<a class="skip" href="#main" style="position:absolute;left:-9999px;top:0;background:var(--verde);color:#fff;padding:.6rem 1rem;border-radius:0 0 8px 0;z-index:99">Pular para o conteúdo</a>
+<a class="skip" href="#main">Pular para o conteúdo</a>
 
 <!-- ================= HEADER ================= -->
 <header id="header">
@@ -397,7 +406,7 @@ footer{background:#182017;color:rgba(238,242,233,.75);padding:3rem 0 1.6rem}
     </nav>
     <div class="header-cta">
       <a class="btn btn-gold" href="#" data-cta>Pedir uma peça</a>
-      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -446,7 +455,7 @@ footer{background:#182017;color:rgba(238,242,233,.75);padding:3rem 0 1.6rem}
 
       <div class="hero-media">
         <div class="frame">
-          <img src="assets/hero.jpg" alt="Look feminino em verde da loja Verde e Sal" width="880" height="1100" fetchpriority="high">
+          <img src="assets/hero.jpg" alt="Look feminino em verde da loja Verde e Sal" width="1400" height="1685" fetchpriority="high">
         </div>
         <div class="float-card fc-status">
           <span class="pulse" aria-hidden="true"></span>
@@ -572,23 +581,23 @@ footer{background:#182017;color:rgba(238,242,233,.75);padding:3rem 0 1.6rem}
       <div class="faq-list reveal">
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">Vocês enviam para todo o Brasil?<span class="plus" aria-hidden="true">+</span></button>
-          <div class="faq-a"><p>Sim! Enviamos para todo o Brasil pelos Correios ou transportadora. O prazo e o frete dependem do seu CEP — chama a gente no WhatsApp ou Instagram que confirmamos na hora.</p></div>
+          <div class="faq-a" hidden><p>Sim! Enviamos para todo o Brasil pelos Correios ou transportadora. O prazo e o frete dependem do seu CEP — chama a gente no WhatsApp ou Instagram que confirmamos na hora.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">Como faço para comprar?<span class="plus" aria-hidden="true">+</span></button>
-          <div class="faq-a"><p>É simples: escolha a peça no nosso Instagram ou diga o que procura pelo WhatsApp. A gente monta seu pedido, confirma o valor, combina o pagamento e despacha com rastreio.</p></div>
+          <div class="faq-a" hidden><p>É simples: escolha a peça no nosso Instagram ou diga o que procura pelo WhatsApp. A gente monta seu pedido, confirma o valor, combina o pagamento e despacha com rastreio.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">Quais são as formas de pagamento?<span class="plus" aria-hidden="true">+</span></button>
-          <div class="faq-a"><p>Trabalhamos com PIX, cartão e outras formas — tudo combinado direto no atendimento, do jeito que for melhor para você.</p></div>
+          <div class="faq-a" hidden><p>Trabalhamos com PIX, cartão e outras formas — tudo combinado direto no atendimento, do jeito que for melhor para você.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">Posso trocar uma peça?<span class="plus" aria-hidden="true">+</span></button>
-          <div class="faq-a"><p>Sim, trocas são bem-vindas. As condições são combinadas com a gente pelo WhatsApp ou Instagram — fale conosco que resolvemos da melhor forma.</p></div>
+          <div class="faq-a" hidden><p>Sim, trocas são bem-vindas. As condições são combinadas com a gente pelo WhatsApp ou Instagram — fale conosco que resolvemos da melhor forma.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">Como sei qual é o meu tamanho?<span class="plus" aria-hidden="true">+</span></button>
-          <div class="faq-a"><p>A gente te ajuda! Envie suas medidas ou o tamanho que costuma usar, e indicamos o ideal para cada peça antes de fechar o pedido.</p></div>
+          <div class="faq-a" hidden><p>A gente te ajuda! Envie suas medidas ou o tamanho que costuma usar, e indicamos o ideal para cada peça antes de fechar o pedido.</p></div>
         </div>
       </div>
     </div>
@@ -598,7 +607,7 @@ footer{background:#182017;color:rgba(238,242,233,.75);padding:3rem 0 1.6rem}
   <section class="contact" id="contato">
     <div class="container">
       <div class="sec-head reveal">
-        <span class="eyebrow" style="color:#c9d6c0">Fale com a gente</span>
+        <span class="eyebrow" style="color:#edf2e6">Fale com a gente</span>
         <h2 class="h-display" style="color:#fff">Vem montar seu <em style="color:#fdd254">look</em>.</h2>
       </div>
       <div class="contact-grid">
@@ -755,12 +764,17 @@ document.querySelectorAll(".faq-q").forEach(function(btn){
     document.querySelectorAll(".faq-item.open").forEach(function(o){
       o.classList.remove("open");
       o.querySelector(".faq-q").setAttribute("aria-expanded","false");
-      o.querySelector(".faq-a").style.maxHeight = null;
+      var oa = o.querySelector(".faq-a");
+      oa.style.maxHeight = null;
+      oa.hidden = true;
     });
     if (!isOpen) {
       item.classList.add("open");
       btn.setAttribute("aria-expanded","true");
       var a = item.querySelector(".faq-a");
+      a.hidden = false;
+      a.style.maxHeight = "0px";
+      void a.offsetHeight;
       a.style.maxHeight = a.scrollHeight + "px";
     }
   });
