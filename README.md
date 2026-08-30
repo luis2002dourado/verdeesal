@@ -4,23 +4,65 @@ Landing page da loja **Verde &amp; Sal** (@verdeesal) — roupas, semijoias, pra
 
 - **Tecnologia:** HTML + CSS + JS puro (sem build, sem dependências).
 - **Hospedagem:** GitHub Pages.
-- **Arquivos:** `index.html` (site), `404.html`, `privacy.html`, `robots.txt`, `sitemap.xml`, `favicon.svg`, `assets/` (imagens).
+- **Paleta:** extraída do logo da loja (verde-sálvia `#85A387` + dourado `#DBBE75`).
 
 ---
 
 ## 🔧 Como editar o número de WhatsApp
 
-Abra o `index.html`, procure pelo bloco `CONFIG` no final do arquivo e preencha:
+Abra o `index.html`, procure pelo bloco `CONFIG` no final do arquivo:
 
 ```js
 var CONFIG = {
-  whatsapp: "", // ← cole aqui, ex.: "5599999999999" (DDI 55 + DDD + número, só dígitos)
+  whatsapp: "556699309063", // (66) 99309-063 — só dígitos, com DDI 55
   instagram: "https://www.instagram.com/verdeesal",
   instagramDm: "https://ig.me/m/verdeesal"
 };
 ```
 
-Enquanto o campo `whatsapp` estiver vazio, todos os botões de pedido abrem o **Direct do Instagram**.
+Se o campo `whatsapp` estiver vazio, todos os botões de pedido abrem o **Direct do Instagram**.
+
+---
+
+## 🎨 MCPs configurados
+
+### @colorsandfonts/mcp (paletas de cores)
+
+Configuração já incluída no arquivo `.mcp.json` deste repositório:
+
+```json
+{
+  "mcpServers": {
+    "colorsandfonts": {
+      "command": "npx",
+      "args": ["-y", "@colorsandfonts/mcp"]
+    }
+  }
+}
+```
+
+No Claude Code, use o formato TOML (`.claude.json` / config do client):
+
+```toml
+[mcp_servers.colorsandfonts]
+command = "npx"
+args = ["-y", "@colorsandfonts/mcp"]
+```
+
+Ele gera e visualiza escalas de cor em **Tailwind, SCSS e CSS** (UI interativa). O site já usa a paleta extraída do logo, então só é necessário se quiser gerar novas escalas no futuro.
+
+---
+
+## 📸 Imagens e logo
+
+| Arquivo | O que é |
+|---|---|
+| `assets/logo.png` | **Logo oficial** (fundo removido, transparente) — usado no header e rodapé |
+| `assets/logo-badge.png` | Logo em selo verde arredondado |
+| `assets/favicon.png` | Ícone do site |
+| `assets/hero.jpg` … `assets/acessorios.jpg` | **Placeholders ilustrativos (IA)** — substituir pelas fotos oficiais |
+
+Para trocar as fotos, substitua os arquivos em `assets/` mantendo os mesmos nomes.
 
 ---
 
@@ -41,17 +83,3 @@ git push -u origin main
 
 3. No repositório: **Settings → Pages → Source: `Deploy from a branch` → branch `main`, pasta `/ (root)` → Save**.
 4. O site fica em `https://SEU-USUARIO.github.io/verdeesal/`.
-
----
-
-## 📸 Imagens
-
-As imagens em `assets/` são **ilustrativas (placeholders gerados por IA)**. Substitua pelos arquivos de mesmo nome para usar as fotos oficiais da loja:
-
-| Arquivo | Onde aparece |
-|---|---|
-| `assets/hero.jpg` | Imagem principal (hero) e compartilhamento social (OG) |
-| `assets/roupas.jpg` | Card "Roupas" |
-| `assets/semijoias.jpg` | Card "Semijoias" |
-| `assets/pratas.jpg` | Card "Pratas" |
-| `assets/acessorios.jpg` | Card "Acessórios" + seção "Sobre" |
