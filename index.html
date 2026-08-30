@@ -379,6 +379,7 @@ footer{background:#182017;color:rgba(238,242,233,.75);padding:3rem 0 1.6rem}
   nav.desktop, .header-cta .btn{display:none}
   .burger{display:flex}
   .floating{display:flex}
+  .fc-status{display:none} /* no mobile, um só card flutuante */
   section{padding:3.4rem 0}
   .grid-cats{grid-template-columns:repeat(2,1fr);gap:.9rem}
   .foot-grid{grid-template-columns:1fr}
@@ -680,7 +681,10 @@ footer{background:#182017;color:rgba(238,242,233,.75);padding:3rem 0 1.6rem}
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© <span id="ano"></span> Verde &amp; Sal · Presidente Dutra – MA</span>
+      <span style="display:inline-flex;align-items:center;gap:.6rem">
+        © <span id="ano"></span> Verde &amp; Sal · Presidente Dutra – MA
+        <img src="https://visitor-badge.laobi.icu/badge?page_id=verdeesal&amp;left_color=%234e6e52&amp;right_color=%232b3123&amp;left_text=visitas" height="20" style="width:auto" alt="Contador de visitas" loading="lazy">
+      </span>
       <span class="note">Fotos reais: <a href="https://www.instagram.com/verdeesal" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">@verdeesal</a></span>
     </div>
   </div>
