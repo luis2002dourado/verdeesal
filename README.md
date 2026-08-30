@@ -73,6 +73,33 @@ alguma, substitua o arquivo correspondente em `assets/` mantendo o mesmo nome.
 
 ---
 
+## 🤖 Automações do Claude Code (configuração do projeto)
+
+Configuração inspirada no plugin oficial `claude-code-setup` (análise + recomendações
+de automação). Se você abrir este repositório no **Claude Code**, tudo já está pronto:
+
+| Onde | O que faz |
+|---|---|
+| `CLAUDE.md` | Memória do projeto (stack, config, paleta, deploy) — o Claude lê automaticamente |
+| `.claude/skills/deploy-site/` | Skill `/deploy-site` — publica no GitHub Pages (commit + push + verificação) |
+| `.claude/skills/trocar-foto/` | Skill `/trocar-foto` — substitui foto do site (otimiza + recorta 4:5) |
+| `.claude/agents/ui-reviewer.md` | Subagente revisor de acessibilidade/mobile |
+| `.claude/agents/site-auditor.md` | Subagente que roda os checklists de SEO/segurança do playbook |
+| `.claude/settings.json` | Hooks: valida JS após editar `index.html` + lembrete de deploy ao finalizar |
+| `scripts/` | Scripts auxiliares dos hooks |
+
+### MCPs recomendados (instale no seu Claude Code, se quiser)
+
+```bash
+# Teste visual do site (screenshots desktop/mobile) antes de publicar
+claude mcp add playwright -- npx @playwright/mcp@latest
+
+# Operações no repositório GitHub (issues, PRs, actions)
+claude mcp add github -- npx -y @modelcontextprotocol/server-github
+```
+
+---
+
 ## 🚀 Como publicar no GitHub Pages
 
 1. Crie um repositório no GitHub (ex.: `verdeesal`).
