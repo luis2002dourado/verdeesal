@@ -57,12 +57,19 @@ Ele gera e visualiza escalas de cor em **Tailwind, SCSS e CSS** (UI interativa).
 
 | Arquivo | O que é |
 |---|---|
-| `assets/logo.png` | **Logo oficial** (fundo removido, transparente) — usado no header e rodapé |
+| `assets/logo.png` | **Logo oficial** (transparente) — header e rodapé |
 | `assets/logo-badge.png` | Logo em selo verde arredondado |
 | `assets/favicon.png` | Ícone do site |
-| `assets/hero.jpg` … `assets/acessorios.jpg` | **Placeholders ilustrativos (IA)** — substituir pelas fotos oficiais |
+| `assets/hero.jpg` | Look verde (destaque principal) |
+| `assets/roupas.jpg` | Card "Roupas" |
+| `assets/semijoias.jpg` | Card "Semijoias" |
+| `assets/pratas.jpg` | Card "Pratas" |
+| `assets/acessorios.jpg` | Card "Acessórios" |
+| `assets/sobre.jpg` | Seção "Sobre" |
+| `assets/fotos-reais/` | **Fotos originais enviadas** (não usadas diretamente no site) |
 
-Para trocar as fotos, substitua os arquivos em `assets/` mantendo os mesmos nomes.
+As fotos usadas no site são reais, vindas do Instagram @verdeesal. Para trocar
+alguma, substitua o arquivo correspondente em `assets/` mantendo o mesmo nome.
 
 ---
 
