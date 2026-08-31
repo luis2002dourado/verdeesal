@@ -87,6 +87,8 @@ de automação). Se você abrir este repositório no **Claude Code**, tudo já e
 | `.claude/agents/site-auditor.md` | Subagente que roda os checklists de SEO/segurança do playbook |
 | `.claude/settings.json` | Hooks: valida JS após editar `index.html` + lembrete de deploy ao finalizar |
 | `scripts/` | Scripts auxiliares dos hooks |
+| `.claude/skills/design-taste-frontend/` | **Taste Skill v2** (Leonxlnx/taste-skill) — anti-slop de design: lê o brief, define direção visual, bane padrões genéricos de IA |
+| `.claude/skills/design-taste-frontend-v1/` | **Taste Skill v1** (legacy, mesmo autor) — preservado para retrocompatibilidade |
 
 ### MCPs recomendados (instale no seu Claude Code, se quiser)
 
