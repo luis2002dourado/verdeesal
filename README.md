@@ -102,6 +102,26 @@ claude mcp add github -- npx -y @modelcontextprotocol/server-github
 
 ---
 
+## ☁️ Migrar para Cloudflare Pages (repo privado + domínio próprio + headers)
+
+Vantagens sobre o GitHub Pages:
+- **Repositório pode ficar privado** (no plano grátis)
+- **Cabeçalhos de segurança** (arquivo `_headers` já incluído: CSP, HSTS, nosniff...)
+- **Domínio próprio** fácil (e SSL automático)
+- Cache e CDN globais
+
+Passos:
+1. Crie conta em https://dash.cloudflare.com/sign-up
+2. Workers & Pages → Create → Pages → "Connect to Git"
+3. Autorize o GitHub e escolha o repositório `verdeesal`
+4. Build settings: framework = "None", build command = (vazio), output = `/` (raiz)
+5. Deploy → o site fica em `https://verdeesal.pages.dev`
+6. (Opcional) Adicione o domínio próprio na aba "Custom domains"
+7. Depois que estiver no ar no Cloudflare, o repositório pode ser tornado **privado**
+   (Settings → Danger Zone → Change visibility → Private) — o Cloudflare continua
+   acessando via GitHub App.
+8. Atualize as URLs do domínio (canonical, OG, sitemap, robots) para o novo endereço.
+
 ## 🚀 Como publicar no GitHub Pages
 
 1. Crie um repositório no GitHub (ex.: `verdeesal`).
