@@ -24,12 +24,12 @@ Fluxo padrão para publicar qualquer mudança no GitHub Pages.
 
 3. **Verifique o rebuild** (o Pages demora ~1–2 min; repita até HTTP 200):
    ```bash
-   curl -s -o /dev/null -w "%{http_code}\n" https://luis2002dourado.github.io/verdeesal/
+   curl -s -o /dev/null -w "%{http_code}\n" https://verdeesal.luisdourado2002.workers.dev/
    ```
 
 4. **Confirme o conteúdo** (ex.: conferir se um trecho novo já apareceu):
    ```bash
-   curl -s https://luis2002dourado.github.io/verdeesal/ | grep -o "trecho-esperado"
+   curl -s https://verdeesal.luisdourado2002.workers.dev/ | grep -o "trecho-esperado"
    ```
 
 ## Observações

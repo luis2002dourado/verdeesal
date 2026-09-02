@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://luis2002dourado.github.io/verdeesal/sitemap.xml
+Sitemap: https://verdeesal.luisdourado2002.workers.dev/sitemap.xml

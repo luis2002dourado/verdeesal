@@ -52,9 +52,9 @@ git add -A && git commit -m "..." && git push origin main
 ```
 Depois **verificar o rebuild** do Pages (pode levar ~1–2 min):
 ```bash
-curl -s -o /dev/null -w "%{http_code}" https://luis2002dourado.github.io/verdeesal/
+curl -s -o /dev/null -w "%{http_code}" https://verdeesal.luisdourado2002.workers.dev/
 ```
-URL pública: https://luis2002dourado.github.io/verdeesal/
+URL pública: https://verdeesal.luisdourado2002.workers.dev/
 
 ## Qualidade
 - Após editar `index.html`, validar o JS inline: `node --check` (o hook em
